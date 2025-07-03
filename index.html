@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <meta http-equiv="refresh" content="0;url=https://79c3-190-188-201-245.ngrok-free.app/webhook" />
+    <meta charset="UTF-8">
     <title>Redirigiendo...</title>
+    <script>
+      window.onload = () => {
+        const code = new URLSearchParams(window.location.search).get("code");
+        if (!code) {
+          document.body.innerHTML = "<h2>Falta parámetro 'code'</h2>";
+          return;
+        }
+        window.location.href = "https://02a8-190-188-201-245.ngrok-free.app/callback?code=" + encodeURIComponent(code);
+      };
+    </script>
   </head>
   <body>
-    <p>Redirigiendo a plataforma de pago en https://79c3-190-188-201-245.ngrok-free.app/webhook...</p>
+    <p>Redirigiendo a la plataforma de pago...</p>
   </body>
 </html>
